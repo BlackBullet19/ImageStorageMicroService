@@ -23,7 +23,7 @@ public class Image {
         this.body = body;
     }
 
-    public Image(String uuid, Byte[] image) {
+    public Image() {
         //
     }
 
