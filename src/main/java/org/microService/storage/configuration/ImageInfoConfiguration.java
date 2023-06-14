@@ -37,7 +37,7 @@ public class ImageInfoConfiguration {
         LocalContainerEntityManagerFactoryBean entityManageBean
                 = new LocalContainerEntityManagerFactoryBean();
         entityManageBean.setDataSource(imageDataSource());
-        entityManageBean.setPackagesToScan("org.microService.storage.model.imageInfo");
+        entityManageBean.setPackagesToScan("org.microService.storage.entity.imageInfo");
 
         HibernateJpaVendorAdapter vendorAdapter
                 = new HibernateJpaVendorAdapter();

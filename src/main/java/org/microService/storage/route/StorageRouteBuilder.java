@@ -13,13 +13,11 @@ public class StorageRouteBuilder extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         String path = "file://" + pathToQueue + "?delete=true";
-        String url = "activemq:queue:FILE.OUTPUT";
 
         from(path)
                 .routeId("imageInputRoute")
                 .process("infoStorageProcessor")
                 .process("imageStorageProcessor")
-                .to(url)
                 .stop();
     }
 }

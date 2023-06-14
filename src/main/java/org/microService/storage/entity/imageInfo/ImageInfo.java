@@ -1,21 +1,19 @@
-package org.microService.storage.model.imageInfo;
+package org.microService.storage.entity.imageInfo;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.UUID;
 
 @Entity
-@Table(name = "image_info")
 public class ImageInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private UUID uuid;
+    private String uuid;// to string
     private Long userId;
     private Date creationDate;
     private Long size;
 
-    public ImageInfo(UUID uuid, Long userId, Date creationDate, Long size) {
+    public ImageInfo(String uuid, Long userId, Date creationDate, Long size) {
         this.uuid = uuid;
         this.userId = userId;
         this.creationDate = creationDate;
@@ -26,7 +24,7 @@ public class ImageInfo {
         //
     }
 
-    public ImageInfo(Long id, UUID uuid, Long userId, Date creationDate, Long size) {
+    public ImageInfo(Long id, String uuid, Long userId, Date creationDate, Long size) {
         this.id = id;
         this.uuid = uuid;
         this.userId = userId;
@@ -66,11 +64,11 @@ public class ImageInfo {
         this.size = size;
     }
 
-    public UUID getUuid() {
+    public String getUuid() {
         return uuid;
     }
 
-    public void setUuid(UUID uuid) {
+    public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 }

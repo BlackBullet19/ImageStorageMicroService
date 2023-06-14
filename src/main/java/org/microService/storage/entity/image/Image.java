@@ -1,14 +1,12 @@
-package org.microService.storage.model.image;
+package org.microService.storage.entity.image;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
-import java.util.UUID;
 
 @Document(collection = "images")
 public class Image {
     @Id
-    private Long id;
     private String uuid;
     private byte[] body;
 
@@ -17,22 +15,8 @@ public class Image {
         this.body = body;
     }
 
-    public Image(Long id, String uuid, byte[] body) {
-        this.id = id;
-        this.uuid = uuid;
-        this.body = body;
-    }
-
     public Image() {
         //
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUuid() {

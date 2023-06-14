@@ -1,6 +1,5 @@
 package org.microService.storage.processor;
 
-
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
@@ -25,7 +24,7 @@ public class InfoStorageProcessor implements Processor {
     @Override
     public void process(Exchange exchange) {
         Message message = exchange.getIn();
-        UUID uuid = UUID.randomUUID();
+        String uuid = UUID.randomUUID().toString();
         message.setHeader("UUID", uuid);
         Long userId = message.getHeader("UserId", Long.class);
         java.util.Date date = Date.valueOf(LocalDate.now());

@@ -1,6 +1,5 @@
 package org.microService.storage.processor;
 
-
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.UUID;
 
 @Component
 public class ImageStorageProcessor implements Processor {
@@ -36,9 +34,7 @@ public class ImageStorageProcessor implements Processor {
             throw new RuntimeException(e);
         }
 
-        UUID uuid = message.getHeader("UUID", UUID.class);
-        String uuidString = uuid.toString();
-        Long id = (long)Math.random();
-        storageService.saveImage(id, uuidString, body);
+        String uuid = message.getHeader("UUID", String.class);
+        storageService.saveImage(uuid, body);
     }
 }

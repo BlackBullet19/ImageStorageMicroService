@@ -1,6 +1,6 @@
 package org.microService.storage.repository.imageInfo;
 
-import org.microService.storage.model.imageInfo.ImageInfo;
+import org.microService.storage.entity.imageInfo.ImageInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
