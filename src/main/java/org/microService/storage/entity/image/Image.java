@@ -1,12 +1,11 @@
 package org.microService.storage.entity.image;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "images")
 public class Image {
-    @Id
+    @MongoId
     private String uuid;
     private byte[] body;
 
