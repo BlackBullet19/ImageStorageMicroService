@@ -21,12 +21,9 @@ public class ImageApiServiceImpl implements ImageApiService {
     @Override
     public DataResponse<ImageDto> getByUUID(String uuid) {
         try {
-            DataResponse<ImageDto> response =
-                    new DataResponse<>(null, true, converter.toDto(service.getByUUID(uuid)));
-            return response;
+            return DataResponse.success(converter.toDto(service.getByUUID(uuid)));
         } catch (IllegalArgumentException exception) {
-            DataResponse<ImageDto> response = new DataResponse<>(exception.getMessage(), false, null);
-            return response;
+            return DataResponse.error(exception.getMessage());
         }
     }
 }

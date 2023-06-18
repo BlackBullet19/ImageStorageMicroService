@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/images_info")
@@ -23,13 +22,12 @@ public class ImageInfoStorageController {
         this.service = service;
     }
 
-    @GetMapping(path = "/get_filtered_info_list")
-    public ResponseEntity<ListResponse<List<ImageInfoDto>>> getListByUserIdAndDateRange
+    @GetMapping(path = "/get_filtered_list")
+    public ResponseEntity<ListResponse<ImageInfoDto>> getListByUserIdAndDateRange
             (@RequestParam(value = "id") Long userId
                     , @DateTimeFormat(pattern = "yyyy-MM-dd") Date from
                     , @DateTimeFormat(pattern = "yyyy-MM-dd") Date to) {
-        ListResponse<List<ImageInfoDto>> filteredList = service.getFilteredList(userId, from, to);
+        ListResponse<ImageInfoDto> filteredList = service.getFilteredList(userId, from, to);
         return new ResponseEntity<>(filteredList, filteredList.isSuccess() ? HttpStatus.OK : HttpStatus.BAD_REQUEST);
     }
-
 }

@@ -3,7 +3,7 @@ package org.microService.storage.model.api.response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class DataResponse<T> extends BaseResponse{
+public class DataResponse<T> extends BaseResponse {
 
     private T t;
 
@@ -22,5 +22,19 @@ public class DataResponse<T> extends BaseResponse{
 
     public DataResponse() {
         //
+    }
+
+    public static <T> DataResponse<T> success(T t) {
+        DataResponse dataResponse = new DataResponse();
+        dataResponse.setT(t);
+        dataResponse.setSuccess(true);
+        return dataResponse;
+    }
+
+    public static DataResponse error(String error) {
+        DataResponse dataResponse = new DataResponse();
+        dataResponse.setError(error);
+        dataResponse.setSuccess(false);
+        return dataResponse;
     }
 }

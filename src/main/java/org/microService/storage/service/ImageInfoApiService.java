@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ImageInfoApiService {
 
-    ListResponse<List<ImageInfoDto>> getFilteredList(Long userId, Date from, Date to);
+    ListResponse<ImageInfoDto> getFilteredList(Long userId, Date from, Date to);
 }

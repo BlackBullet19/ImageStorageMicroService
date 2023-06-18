@@ -22,16 +22,12 @@ public class ImageInfoApiServiceImpl implements ImageInfoApiService {
     }
 
     @Override
-    public ListResponse<List<ImageInfoDto>> getFilteredList(Long userId, Date from, Date to) {
+    public ListResponse<ImageInfoDto> getFilteredList(Long userId, Date from, Date to) {
         try {
-            ListResponse<List<ImageInfoDto>> response = new ListResponse<>
-                    (null, true, converter
-                            .toDtoList(storageService.getListByUserIdAndDateRange(userId, from, to)));
-            return response;
+            return ListResponse.success
+                    (converter.toDtoList(storageService.getListByUserIdAndDateRange(userId, from, to)));
         } catch (IllegalArgumentException exception) {
-            ListResponse<List<ImageInfoDto>> response = new ListResponse<>
-                    (exception.getMessage(), false, null);
-            return response;
+            return ListResponse.error(exception.getMessage());
         }
     }
 }
