@@ -4,8 +4,8 @@ import org.microService.storage.dto.ImageInfoDto;
 import org.microService.storage.entity.imageInfo.ImageInfo;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -14,7 +14,7 @@ public class ImageInfoDtoConverterImpl implements ImageInfoDtoConverter {
     public ImageInfoDto toDto(ImageInfo imageInfo) {
         ImageInfoDto imageInfoDto = new ImageInfoDto();
         String uuid = imageInfo.getUuid();
-        Date creationDate = imageInfo.getCreationDate();
+        LocalDate creationDate = imageInfo.getCreationDate();
         Long size = imageInfo.getSize();
         imageInfoDto.setSize(size);
         imageInfoDto.setUuid(uuid);

@@ -7,7 +7,6 @@ import org.microService.storage.service.ImageInfoStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -27,7 +26,7 @@ public class InfoStorageProcessor implements Processor {
         String uuid = UUID.randomUUID().toString();
         message.setHeader("UUID", uuid);
         Long userId = message.getHeader("UserId", Long.class);
-        java.util.Date date = Date.valueOf(LocalDate.now());
+        LocalDate date = LocalDate.now();
         Long size = message.getHeader("CamelFileLength", Long.class);
         storageService.save(uuid, 1L, date, size);
     }

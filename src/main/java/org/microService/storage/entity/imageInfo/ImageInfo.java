@@ -1,7 +1,7 @@
 package org.microService.storage.entity.imageInfo;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class ImageInfo {
@@ -10,10 +10,10 @@ public class ImageInfo {
     private Long id;
     private String uuid;
     private Long userId;
-    private Date creationDate;
+    private LocalDate creationDate;
     private Long size;
 
-    public ImageInfo(String uuid, Long userId, Date creationDate, Long size) {
+    public ImageInfo(String uuid, Long userId, LocalDate creationDate, Long size) {
         this.uuid = uuid;
         this.userId = userId;
         this.creationDate = creationDate;
@@ -24,7 +24,7 @@ public class ImageInfo {
         //
     }
 
-    public ImageInfo(Long id, String uuid, Long userId, Date creationDate, Long size) {
+    public ImageInfo(Long id, String uuid, Long userId, LocalDate creationDate, Long size) {
         this.id = id;
         this.uuid = uuid;
         this.userId = userId;
@@ -48,11 +48,11 @@ public class ImageInfo {
         this.userId = userId;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 

@@ -1,16 +1,16 @@
 package org.microService.storage.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class ImageInfoDto {
 
     private String uuid;
 
-    private Date creationDate;
+    private LocalDate creationDate;
 
     private Long size;
 
-    public ImageInfoDto(String uuid, Date creationDate, Long size) {
+    public ImageInfoDto(String uuid, LocalDate creationDate, Long size) {
         this.uuid = uuid;
         this.creationDate = creationDate;
         this.size = size;
@@ -28,11 +28,11 @@ public class ImageInfoDto {
         this.uuid = uuid;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 

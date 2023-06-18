@@ -2,12 +2,12 @@ package org.microService.storage.service;
 
 import org.microService.storage.entity.imageInfo.ImageInfo;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ImageInfoStorageService {
 
-    ImageInfo save(String uuid, Long userId, Date date, Long size);
+    ImageInfo save(String uuid, Long userId, LocalDate date, Long size);
 
-    List<ImageInfo> getListByUserIdAndDateRange(Long userId, Date from, Date to);
+    List<ImageInfo> getListByUserIdAndDateRange(Long userId, String from, String to);
 }

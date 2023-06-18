@@ -5,9 +5,6 @@ import org.microService.storage.model.api.response.ListResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-
 @Service
 public class ImageInfoApiServiceImpl implements ImageInfoApiService {
 
@@ -22,7 +19,7 @@ public class ImageInfoApiServiceImpl implements ImageInfoApiService {
     }
 
     @Override
-    public ListResponse<ImageInfoDto> getFilteredList(Long userId, Date from, Date to) {
+    public ListResponse<ImageInfoDto> getFilteredList(Long userId, String from, String to) {
         try {
             return ListResponse.success
                     (converter.toDtoList(storageService.getListByUserIdAndDateRange(userId, from, to)));
