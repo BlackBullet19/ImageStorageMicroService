@@ -8,7 +8,7 @@ public class ImageInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String uuid;// to string
+    private String uuid;
     private Long userId;
     private Date creationDate;
     private Long size;

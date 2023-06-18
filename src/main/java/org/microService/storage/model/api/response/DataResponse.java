@@ -2,8 +2,6 @@ package org.microService.storage.model.api.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataResponse<T> extends BaseResponse{
 
