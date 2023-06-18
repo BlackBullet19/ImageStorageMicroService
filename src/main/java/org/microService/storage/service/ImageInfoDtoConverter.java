@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ImageInfoDtoConverter {
 
-    ImageInfoDto toImageInfoDto(ImageInfo imageInfo);
+    ImageInfoDto toDto(ImageInfo imageInfo);
 
-    List<ImageInfoDto> fromImageInfoListToImageInfoDtoList(List<ImageInfo> imageInfos);
+    List<ImageInfoDto> toDtoList(List<ImageInfo> imageInfos);
 }

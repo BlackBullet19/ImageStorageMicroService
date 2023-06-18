@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ImageDtoConverterImpl implements ImageDtoConverter {
     @Override
-    public ImageDto toImageDto(Image image) {
+    public ImageDto toDto(Image image) {
         ImageDto imageDto = new ImageDto();
         byte[] body = image.getBody();
         imageDto.setBody(body);

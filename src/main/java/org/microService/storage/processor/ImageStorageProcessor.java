@@ -35,6 +35,6 @@ public class ImageStorageProcessor implements Processor {
         }
 
         String uuid = message.getHeader("UUID", String.class);
-        storageService.saveImage(uuid, body);
+        storageService.save(uuid, body);
     }
 }

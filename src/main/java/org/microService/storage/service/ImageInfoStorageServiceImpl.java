@@ -19,7 +19,7 @@ public class ImageInfoStorageServiceImpl implements ImageInfoStorageService {
     }
 
     @Override
-    public ImageInfo saveImageInfo(String uuid, Long userId, Date date, Long size) {
+    public ImageInfo save(String uuid, Long userId, Date date, Long size) {
         if (uuid == null || uuid.isEmpty()) throw new IllegalArgumentException("UUID must be declared");
         if (userId == null || userId <= 0)
             throw new IllegalArgumentException("UserId must be declared and cannot be less than 0");
@@ -29,11 +29,11 @@ public class ImageInfoStorageServiceImpl implements ImageInfoStorageService {
     }
 
     @Override
-    public List<ImageInfo> getListOfImageInfoByUserIdAndDateRange(Long userId, Date from, Date to) {
+    public List<ImageInfo> getListByUserIdAndDateRange(Long userId, Date from, Date to) {
         if (userId == null || userId <= 0)
             throw new IllegalArgumentException("UserId must be declared and cannot be less than 0");
         if (from == null || to == null) throw new IllegalArgumentException("Date cannot be null");
-        return imageInfoRepository.getAllImageInfoByUserIdAndCreationDateGreaterThanEqualAndCreationDateIsLessThanEqual
+        return imageInfoRepository.getAllByUserIdAndCreationDateGreaterThanEqualAndCreationDateIsLessThanEqual
                 (userId, from, to);
     }
 }

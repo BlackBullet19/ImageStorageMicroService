@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ImageInfoDtoConverterImpl implements ImageInfoDtoConverter {
     @Override
-    public ImageInfoDto toImageInfoDto(ImageInfo imageInfo) {
+    public ImageInfoDto toDto(ImageInfo imageInfo) {
         ImageInfoDto imageInfoDto = new ImageInfoDto();
         String uuid = imageInfo.getUuid();
         Date creationDate = imageInfo.getCreationDate();
@@ -23,9 +23,9 @@ public class ImageInfoDtoConverterImpl implements ImageInfoDtoConverter {
     }
 
     @Override
-    public List<ImageInfoDto> fromImageInfoListToImageInfoDtoList(List<ImageInfo> imageInfos) {
+    public List<ImageInfoDto> toDtoList(List<ImageInfo> imageInfos) {
         List<ImageInfoDto> dtos = new ArrayList<>();
-        imageInfos.forEach(imageInfo -> dtos.add(toImageInfoDto(imageInfo)));
+        imageInfos.forEach(imageInfo -> dtos.add(toDto(imageInfo)));
         return dtos;
     }
 }

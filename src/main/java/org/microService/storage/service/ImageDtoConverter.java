@@ -5,5 +5,5 @@ import org.microService.storage.entity.image.Image;
 
 public interface ImageDtoConverter {
 
-    ImageDto toImageDto(Image image);
+    ImageDto toDto(Image image);
 }

@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ImageInfoRepository extends JpaRepository<ImageInfo, Long> {
-    List<ImageInfo> getAllImageInfoByUserIdAndCreationDateGreaterThanEqualAndCreationDateIsLessThanEqual
+    List<ImageInfo> getAllByUserIdAndCreationDateGreaterThanEqualAndCreationDateIsLessThanEqual
             (Long userId, Date creationDate, Date creationDateTo);
 }

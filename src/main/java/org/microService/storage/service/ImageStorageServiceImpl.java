@@ -16,14 +16,14 @@ public class ImageStorageServiceImpl implements ImageStorageService {
     }
 
     @Override
-    public Image saveImage(String uuid, byte[] image) {
+    public Image save(String uuid, byte[] image) {
         if (uuid == null) throw new IllegalArgumentException("UUID must be declared");
         if(image == null) throw new IllegalStateException("Image doesnt exist");
         return imageRepository.save(new Image(uuid, image));
     }
 
     @Override
-    public Image getByImageUUID(String uuid) {
+    public Image getByUUID(String uuid) {
         if (uuid == null) throw new IllegalArgumentException("UUID must be declared");
         return imageRepository.findByUuid(uuid);
     }
