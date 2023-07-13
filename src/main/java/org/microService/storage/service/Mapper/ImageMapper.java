@@ -1,15 +1,15 @@
-package org.microService.storage.service;
+package org.microService.storage.service.Mapper;
 
 import org.microService.storage.dto.ImageDto;
 import org.microService.storage.entity.image.Image;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ImageDtoConverterImpl implements ImageDtoConverter {
+public class ImageMapper implements Mapper<Image, ImageDto> {
     @Override
-    public ImageDto toDto(Image image) {
+    public ImageDto toDto(Image entity) {
         ImageDto imageDto = new ImageDto();
-        byte[] body = image.getBody();
+        byte[] body = entity.getBody();
         imageDto.setBody(body);
         return imageDto;
     }

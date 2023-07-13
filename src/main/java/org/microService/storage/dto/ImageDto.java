@@ -1,6 +1,8 @@
 package org.microService.storage.dto;
 
-public class ImageDto {
+import org.microService.storage.service.EntityMicroService;
+
+public class ImageDto implements EntityMicroService {
 
     private byte[] body;
 

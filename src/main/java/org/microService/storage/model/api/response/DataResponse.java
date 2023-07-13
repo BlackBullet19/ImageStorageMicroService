@@ -15,8 +15,8 @@ public class DataResponse<T> extends BaseResponse {
         this.t = t;
     }
 
-    public DataResponse(String error, boolean success, T t) {
-        super(error, success);
+    public DataResponse(String error, T t) {
+        super(error);
         this.t = t;
     }
 
@@ -27,14 +27,12 @@ public class DataResponse<T> extends BaseResponse {
     public static <T> DataResponse<T> success(T t) {
         DataResponse dataResponse = new DataResponse();
         dataResponse.setT(t);
-        dataResponse.setSuccess(true);
         return dataResponse;
     }
 
     public static DataResponse error(String error) {
         DataResponse dataResponse = new DataResponse();
         dataResponse.setError(error);
-        dataResponse.setSuccess(false);
         return dataResponse;
     }
 }

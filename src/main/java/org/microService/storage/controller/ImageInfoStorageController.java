@@ -19,12 +19,12 @@ public class ImageInfoStorageController {
         this.service = service;
     }
 
-    @GetMapping(path = "/get_filtered_list")
+    @GetMapping(path = "/filtered_list")
     public ResponseEntity<ListResponse<ImageInfoDto>> getListByUserIdAndDateRange
             (@RequestParam(value = "id") Long userId
                     , @RequestParam(value = "from") String from
                     , @RequestParam(value = "to") String to) {
         ListResponse<ImageInfoDto> filteredList = service.getFilteredList(userId, from, to);
-        return new ResponseEntity<>(filteredList, filteredList.isSuccess() ? HttpStatus.OK : HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(filteredList, HttpStatus.OK);
     }
 }

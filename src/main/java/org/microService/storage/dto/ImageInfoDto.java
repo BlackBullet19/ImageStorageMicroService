@@ -1,8 +1,10 @@
 package org.microService.storage.dto;
 
+import org.microService.storage.service.EntityMicroService;
+
 import java.time.LocalDate;
 
-public class ImageInfoDto {
+public class ImageInfoDto implements EntityMicroService {
 
     private String uuid;
 

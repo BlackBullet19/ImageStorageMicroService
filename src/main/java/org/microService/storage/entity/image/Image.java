@@ -1,10 +1,11 @@
 package org.microService.storage.entity.image;
 
+import org.microService.storage.service.EntityMicroService;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "images")
-public class Image {
+public class Image implements EntityMicroService {
     @MongoId
     private String uuid;
     private byte[] body;

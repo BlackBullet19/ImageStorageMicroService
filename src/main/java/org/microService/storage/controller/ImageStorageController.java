@@ -22,6 +22,6 @@ public class ImageStorageController {
     @GetMapping("/{uuid}")
     public ResponseEntity<DataResponse<ImageDto>> getByUUID(@PathVariable(value = "uuid") String uuid) {
         DataResponse<ImageDto> byUUID = service.getByUUID(uuid);
-        return new ResponseEntity<>(byUUID, byUUID.isSuccess() ? HttpStatus.OK : HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(byUUID, HttpStatus.OK);
     }
 }

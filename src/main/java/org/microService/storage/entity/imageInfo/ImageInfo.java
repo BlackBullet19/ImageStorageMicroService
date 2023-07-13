@@ -1,10 +1,13 @@
 package org.microService.storage.entity.imageInfo;
 
+import org.microService.storage.service.EntityMicroService;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+
 @Entity
-public class ImageInfo {
+public class ImageInfo implements EntityMicroService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

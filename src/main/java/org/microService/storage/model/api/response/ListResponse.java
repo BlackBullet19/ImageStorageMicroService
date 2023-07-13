@@ -25,14 +25,12 @@ public class ListResponse<T> extends BaseResponse {
     public static <T> ListResponse<T> success(List<T> list) {
         ListResponse<T> response = new ListResponse<>();
         response.setList(list);
-        response.setSuccess(true);
         return response;
     }
 
     public static ListResponse error(String error) {
         ListResponse listResponse = new ListResponse();
         listResponse.setError(error);
-        listResponse.setSuccess(false);
         return listResponse;
     }
 }
