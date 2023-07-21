@@ -7,10 +7,6 @@ import org.microService.storage.service.ImageStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-
 @Component
 public class ImageStorageProcessor implements Processor {
 
@@ -24,16 +20,7 @@ public class ImageStorageProcessor implements Processor {
     @Override
     public void process(Exchange exchange) {
         Message message = exchange.getIn();
-        File file = exchange.getIn().getBody(File.class);
-        byte[] body = new byte[(int) file.length()];
-        try {
-            try (FileInputStream inputStream = new FileInputStream(file)) {
-                inputStream.read(body);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+        byte[] body = message.getBody(byte[].class);
         String uuid = message.getHeader("UUID", String.class);
         storageService.save(uuid, body);
     }

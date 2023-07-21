@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @ControllerAdvice
 public class ImageExceptionHandler {
+
     @ExceptionHandler
     public ResponseEntity<DataResponse<ImageDto>> handleIllegalArgumentException(IllegalArgumentException exception,
                                                                                  HttpServletRequest request) {

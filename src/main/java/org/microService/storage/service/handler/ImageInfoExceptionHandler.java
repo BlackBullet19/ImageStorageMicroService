@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @ControllerAdvice
 public class ImageInfoExceptionHandler {
+
     @ExceptionHandler
     public ResponseEntity<ListResponse<ImageInfoDto>> handleIllegalArgumentException(IllegalArgumentException exception
             , HttpServletRequest request){

@@ -20,13 +20,15 @@ public class ImageInfoStorageServiceImpl implements ImageInfoStorageService {
     }
 
     @Override
-    public ImageInfo save(String uuid, Long userId, LocalDate date, Long size) {
+    public ImageInfo save(String uuid, Long userId, LocalDate date, Long size, String name, String type) {
         if (uuid == null || uuid.isEmpty()) throw new IllegalArgumentException("UUID must be declared");
         if (userId == null || userId <= 0)
             throw new IllegalArgumentException("UserId must be declared and cannot be less than 0");
         if (date == null) throw new IllegalArgumentException("Date cannot be null");
         if (size == null) throw new IllegalArgumentException("Size cannot be null");
-        return imageInfoRepository.save(new ImageInfo(uuid, userId, date, size));
+        if(name.isBlank() || name.isEmpty()) throw new IllegalArgumentException("Image must have name");
+        if(type.isEmpty() || type.isBlank()) throw new IllegalArgumentException("Type must be declared");
+        return imageInfoRepository.save(new ImageInfo(uuid, userId, date, size, name, type));
     }
 
     @Override
@@ -37,13 +39,15 @@ public class ImageInfoStorageServiceImpl implements ImageInfoStorageService {
             throw new IllegalArgumentException("You must declare date");
         if(from.length()!=10 || to.length() != 10)
             throw new IllegalArgumentException("Date must be in format -> yyyy-MM-dd");
+        LocalDate dateFrom;
+        LocalDate dateTo;
         try {
-            LocalDate dateFrom = LocalDate.parse(from);
-            LocalDate dateTo = LocalDate.parse(to);
+            dateFrom = LocalDate.parse(from);
+            dateTo = LocalDate.parse(to);
         } catch (DateTimeParseException exception) {
             throw new IllegalArgumentException("Date must be in format and must be real -> yyyy-MM-dd");
         }
         return imageInfoRepository.getAllByUserIdAndCreationDateGreaterThanEqualAndCreationDateIsLessThanEqual
-                (userId, LocalDate.parse(from), LocalDate.parse(to));
+                (userId, dateFrom, dateTo);
     }
 }

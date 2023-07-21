@@ -29,8 +29,7 @@ public class ImageStorageServiceImpl implements ImageStorageService {
         if (uuid == null || uuid.isEmpty() || uuid.isBlank())
             throw new IllegalArgumentException("UUID must be declared");
         if(uuid.length()!= 36) throw new IllegalArgumentException("UUID must contain 36 characters");
-        Image image = imageRepository.findByUuid(uuid);
-        if (image == null) throw new NoSuchElementException("Image not found");
-        return image;
+        if(imageRepository.findById(uuid).isEmpty()) throw new NoSuchElementException("Image not found");
+        return imageRepository.findById(uuid).get();
     }
 }

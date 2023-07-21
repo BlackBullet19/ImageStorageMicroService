@@ -4,5 +4,5 @@ import org.microService.storage.entity.image.Image;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ImageRepository  extends MongoRepository<Image, String>{
-    Image findByUuid(String uuid);
+
 }

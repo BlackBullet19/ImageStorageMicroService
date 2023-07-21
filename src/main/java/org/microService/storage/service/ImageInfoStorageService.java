@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ImageInfoStorageService {
 
-    ImageInfo save(String uuid, Long userId, LocalDate date, Long size);
+    ImageInfo save(String uuid, Long userId, LocalDate date, Long size, String name, String type);
 
     List<ImageInfo> getListByUserIdAndDateRange(Long userId, String from, String to);
 }

@@ -5,7 +5,6 @@ import org.microService.storage.service.EntityMicroService;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-
 @Entity
 public class ImageInfo implements EntityMicroService {
     @Id
@@ -16,23 +15,31 @@ public class ImageInfo implements EntityMicroService {
     private LocalDate creationDate;
     private Long size;
 
-    public ImageInfo(String uuid, Long userId, LocalDate creationDate, Long size) {
+    private String name;
+
+    private String type;
+
+    public ImageInfo(String uuid, Long userId, LocalDate creationDate, Long size, String name, String type) {
         this.uuid = uuid;
         this.userId = userId;
         this.creationDate = creationDate;
         this.size = size;
+        this.name = name;
+        this.type = type;
     }
 
     public ImageInfo() {
         //
     }
 
-    public ImageInfo(Long id, String uuid, Long userId, LocalDate creationDate, Long size) {
+    public ImageInfo(Long id, String uuid, Long userId, LocalDate creationDate, Long size, String name, String type) {
         this.id = id;
         this.uuid = uuid;
         this.userId = userId;
         this.creationDate = creationDate;
         this.size = size;
+        this.name = name;
+        this.type = type;
     }
 
     public Long getId() {
@@ -73,5 +80,21 @@ public class ImageInfo implements EntityMicroService {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

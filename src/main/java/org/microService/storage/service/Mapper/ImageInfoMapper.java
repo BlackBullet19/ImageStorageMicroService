@@ -14,9 +14,13 @@ public class ImageInfoMapper implements Mapper<ImageInfo, ImageInfoDto> {
         String uuid = entity.getUuid();
         LocalDate creationDate = entity.getCreationDate();
         Long size = entity.getSize();
+        String name = entity.getName();
+        String type = entity.getType();
         dto.setSize(size);
         dto.setUuid(uuid);
         dto.setCreationDate(creationDate);
+        dto.setName(name);
+        dto.setType(type);
         return dto;
     }
 }

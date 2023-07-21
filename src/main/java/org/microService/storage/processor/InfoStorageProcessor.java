@@ -27,7 +27,9 @@ public class InfoStorageProcessor implements Processor {
         message.setHeader("UUID", uuid);
         Long userId = message.getHeader("UserId", Long.class);
         LocalDate date = LocalDate.now();
-        Long size = message.getHeader("CamelFileLength", Long.class);
-        storageService.save(uuid, 1L, date, size);
+        Long size = message.getHeader("size", Long.class);
+        String name = message.getHeader("filename", String.class);
+        String type = message.getHeader("type", String.class);
+        storageService.save(uuid, 1L, date, size, name, type);
     }
 }

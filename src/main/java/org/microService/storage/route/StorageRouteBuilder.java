@@ -12,7 +12,7 @@ public class StorageRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        String path = "file://" + pathToQueue + "?delete=true";
+        String path = pathToQueue;
 
         from(path)
                 .routeId("imageInputRoute")
