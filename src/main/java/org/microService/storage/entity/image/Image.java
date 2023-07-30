@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "images")
 public class Image implements EntityMicroService {
+
     @MongoId
     private String uuid;
     private byte[] body;

@@ -1,4 +1,4 @@
-package org.microService.storage.service.Mapper;
+package org.microService.storage.service.mapper;
 
 import org.microService.storage.dto.ImageInfoDto;
 import org.microService.storage.entity.imageInfo.ImageInfo;
@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 @Service
 public class ImageInfoMapper implements Mapper<ImageInfo, ImageInfoDto> {
+
     @Override
     public ImageInfoDto toDto(ImageInfo entity) {
         ImageInfoDto dto = new ImageInfoDto();

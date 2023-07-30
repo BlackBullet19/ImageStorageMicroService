@@ -1,4 +1,4 @@
-package org.microService.storage.service.Mapper;
+package org.microService.storage.service.mapper;
 
 import org.microService.storage.service.EntityMicroService;
 

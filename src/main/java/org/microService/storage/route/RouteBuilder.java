@@ -1,11 +1,10 @@
 package org.microService.storage.route;
 
-import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StorageRouteBuilder extends RouteBuilder {
+public class RouteBuilder extends org.apache.camel.builder.RouteBuilder {
 
     @Value("${storage-microservice.path:}")
     private String pathToQueue;

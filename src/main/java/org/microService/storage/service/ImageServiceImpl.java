@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.NoSuchElementException;
 
 @Service
-public class ImageStorageServiceImpl implements ImageStorageService {
+public class ImageServiceImpl implements ImageService {
 
     private final ImageRepository imageRepository;
 
     @Autowired
-    public ImageStorageServiceImpl(ImageRepository imageRepository) {
+    public ImageServiceImpl(ImageRepository imageRepository) {
         this.imageRepository = imageRepository;
     }
 

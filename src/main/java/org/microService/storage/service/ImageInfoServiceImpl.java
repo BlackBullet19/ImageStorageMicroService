@@ -10,12 +10,12 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 
 @Service
-public class ImageInfoStorageServiceImpl implements ImageInfoStorageService {
+public class ImageInfoServiceImpl implements ImageInfoService {
 
     private final ImageInfoRepository imageInfoRepository;
 
     @Autowired
-    public ImageInfoStorageServiceImpl(ImageInfoRepository imageInfoRepository) {
+    public ImageInfoServiceImpl(ImageInfoRepository imageInfoRepository) {
         this.imageInfoRepository = imageInfoRepository;
     }
 

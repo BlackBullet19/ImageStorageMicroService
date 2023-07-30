@@ -3,7 +3,7 @@ package org.microService.storage.processor;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.Processor;
-import org.microService.storage.service.ImageInfoStorageService;
+import org.microService.storage.service.ImageInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +11,12 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Component
-public class InfoStorageProcessor implements Processor {
+public class ImageInfoProcessor implements Processor {
 
-    private final ImageInfoStorageService storageService;
+    private final ImageInfoService storageService;
 
     @Autowired
-    public InfoStorageProcessor(ImageInfoStorageService storageService) {
+    public ImageInfoProcessor(ImageInfoService storageService) {
         this.storageService = storageService;
     }
 
