@@ -15,8 +15,8 @@ public class RouteBuilder extends org.apache.camel.builder.RouteBuilder {
 
         from(path)
                 .routeId("imageInputRoute")
-                .process("infoStorageProcessor")
-                .process("imageStorageProcessor")
+                .process("imageInfoProcessor")
+                .process("imageProcessor")
                 .stop();
     }
 }

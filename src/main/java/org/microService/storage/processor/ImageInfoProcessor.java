@@ -13,11 +13,11 @@ import java.util.UUID;
 @Component
 public class ImageInfoProcessor implements Processor {
 
-    private final ImageInfoService storageService;
+    private final ImageInfoService service;
 
     @Autowired
-    public ImageInfoProcessor(ImageInfoService storageService) {
-        this.storageService = storageService;
+    public ImageInfoProcessor(ImageInfoService service) {
+        this.service = service;
     }
 
     @Override
@@ -30,6 +30,6 @@ public class ImageInfoProcessor implements Processor {
         Long size = message.getHeader("size", Long.class);
         String name = message.getHeader("filename", String.class);
         String type = message.getHeader("type", String.class);
-        storageService.save(uuid, 1L, date, size, name, type);
+        service.save(uuid, 1L, date, size, name, type);
     }
 }

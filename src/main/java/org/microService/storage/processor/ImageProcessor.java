@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class ImageProcessor implements Processor {
 
-    private final ImageService storageService;
+    private final ImageService service;
 
     @Autowired
-    public ImageProcessor(ImageService storageService) {
-        this.storageService = storageService;
+    public ImageProcessor(ImageService service) {
+        this.service = service;
     }
 
     @Override
@@ -22,6 +22,6 @@ public class ImageProcessor implements Processor {
         Message message = exchange.getIn();
         byte[] body = message.getBody(byte[].class);
         String uuid = message.getHeader("UUID", String.class);
-        storageService.save(uuid, body);
+        service.save(uuid, body);
     }
 }
