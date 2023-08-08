@@ -14,7 +14,7 @@ public class ImageInfoExceptionHandler {
 
     @ExceptionHandler
     public ResponseEntity<ListResponse<ImageInfoDto>> handleIllegalArgumentException(IllegalArgumentException exception
-            , HttpServletRequest request){
+            , HttpServletRequest request) {
         return new ResponseEntity<ListResponse<ImageInfoDto>>
                 (ListResponse.error(exception.getMessage()), HttpStatus.BAD_REQUEST);
     }

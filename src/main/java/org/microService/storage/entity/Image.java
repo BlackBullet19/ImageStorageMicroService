@@ -1,4 +1,4 @@
-package org.microService.storage.entity.image;
+package org.microService.storage.entity;
 
 import org.microService.storage.service.EntityMicroService;
 import org.springframework.data.mongodb.core.mapping.Document;

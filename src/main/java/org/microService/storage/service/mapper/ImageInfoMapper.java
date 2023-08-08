@@ -1,7 +1,7 @@
 package org.microService.storage.service.mapper;
 
 import org.microService.storage.dto.ImageInfoDto;
-import org.microService.storage.entity.imageInfo.ImageInfo;
+import org.microService.storage.entity.ImageInfo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

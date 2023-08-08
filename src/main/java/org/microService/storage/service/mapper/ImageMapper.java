@@ -1,7 +1,7 @@
 package org.microService.storage.service.mapper;
 
 import org.microService.storage.dto.ImageDto;
-import org.microService.storage.entity.image.Image;
+import org.microService.storage.entity.Image;
 import org.springframework.stereotype.Service;
 
 @Service

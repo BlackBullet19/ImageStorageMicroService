@@ -1,4 +1,4 @@
-package org.microService.storage.entity.imageInfo;
+package org.microService.storage.entity;
 
 import org.microService.storage.service.EntityMicroService;
 
